@@ -1195,6 +1195,13 @@ a {
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.about-highlight-item:hover {
+  border-color: rgba(239, 48, 56, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(239, 48, 56, 0.12);
 }
 
 .highlight-num {
@@ -1202,7 +1209,7 @@ a {
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.02em;
-  color: var(--gold);
+  color: var(--crimson);
 }
 
 .highlight-label {
