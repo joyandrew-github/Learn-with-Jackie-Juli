@@ -48,9 +48,9 @@ html {
 #about,
 #teach,
 #how,
-#resources,
+#reels,
 #community {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 85px;
 }
 
 body {
@@ -1096,6 +1096,7 @@ a {
   max-width: 1120px;
   margin: 0 auto;
   padding: 120px 24px 20px;
+  scroll-margin-top: 90px;
 }
 
 .section-head {
@@ -1980,27 +1981,98 @@ a {
 
 @media (max-width: 640px) {
   .ring-stage {
-    --r: 210px;
-    height: 420px;
+    --r: 195px;
+    height: 440px;
+    overflow: hidden;
+    touch-action: pan-y;
   }
 
   .ring {
-    width: 175px;
-    height: 310px;
-    margin-left: -87.5px;
+    width: 165px;
+    height: 295px;
+    margin-left: -82.5px;
+    top: 12px;
   }
 
   .ring-nav-btn {
-    width: 38px;
-    height: 38px;
+    top: auto;
+    bottom: 14px;
+    transform: none;
+    width: 44px;
+    height: 44px;
+    z-index: 20;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   }
 
   .ring-nav-prev {
-    left: 8px;
+    left: calc(50% - 56px);
   }
 
   .ring-nav-next {
-    right: 8px;
+    right: calc(50% - 56px);
+  }
+
+  .ring-nav-btn:hover {
+    transform: scale(1.08);
+  }
+
+  .reel-lightbox-modal {
+    width: 95vw;
+    border-radius: 18px;
+    max-height: 90vh;
+  }
+
+  .reel-lightbox-body {
+    padding: 16px 14px;
+    gap: 14px;
+    max-height: 86vh;
+  }
+
+  .reel-lightbox-img {
+    max-height: 38vh;
+  }
+
+  .lightbox-title {
+    font-size: 19px;
+  }
+
+  .lightbox-hook {
+    font-size: 13px;
+  }
+
+  .lightbox-desc {
+    font-size: 13px;
+  }
+
+  .lightbox-takeaways li {
+    font-size: 12.5px;
+  }
+
+  .lightbox-footer-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .ring-stage {
+    --r: 172px;
+    height: 410px;
+  }
+
+  .ring {
+    width: 148px;
+    height: 265px;
+    margin-left: -74px;
+  }
+
+  .panel-title-mini {
+    font-size: 13px;
+  }
+
+  .panel-action-btn {
+    font-size: 10px;
+    padding: 4px 6px;
   }
 }
 
@@ -3002,14 +3074,14 @@ a {
 @media (max-width: 900px) {
   .nav {
     width: calc(100% - 24px);
-    padding: 12px 18px;
-    min-height: 64px;
+    padding: 10px 16px;
+    min-height: 60px;
   }
 
   .nav.scrolled {
-    width: calc(100% - 32px);
+    width: calc(100% - 28px);
     padding: 8px 14px;
-    min-height: 56px;
+    min-height: 54px;
   }
 
   .nav-links {
@@ -3024,24 +3096,30 @@ a {
     display: none;
   }
 
+  .hero {
+    height: auto;
+    min-height: 100dvh;
+    padding-bottom: 24px;
+  }
+
   .hero-content {
-    padding: 130px 24px 30px;
+    padding: 110px 20px 20px;
   }
 
   .title-big {
-    font-size: clamp(52px, 8vw, 68px);
+    font-size: clamp(48px, 7.5vw, 64px);
     letter-spacing: -0.03em;
   }
 
   .hero-stats-wrap {
-    padding: 0 24px;
+    padding: 0 20px;
   }
 
   .hero-bottom {
-    padding: 16px 24px 24px;
+    padding: 16px 20px 20px;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
   }
 
   .hero-motto {
@@ -3052,16 +3130,14 @@ a {
     padding-top: 90px;
   }
 
-  .topics {
-    grid-template-columns: 1fr;
-  }
-
-  .topic:nth-child(n) {
-    grid-column: auto;
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .how-spacious-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .how-simple-bar {
@@ -3091,42 +3167,53 @@ a {
 
   .community-hero-stats {
     justify-content: center;
+    gap: 24px;
   }
 
   .community-hero-actions {
     justify-content: center;
   }
-
-  .community-hubs-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .community-perks-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .community-voices-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
-@media (max-width: 1024px) and (min-width: 641px) {
-  .hero-float-card {
-    width: 72px;
-    height: 72px;
-    padding: 6px 4px;
-    border-radius: 13px;
-    gap: 3px;
+@media (max-width: 720px) {
+  .topics-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+    padding-bottom: 6px;
+    margin-bottom: 24px;
+    width: 100%;
   }
 
-  .hero-float-card-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 8px;
+  .topics-filters::-webkit-scrollbar {
+    display: none;
   }
 
-  .hero-float-card-label {
-    font-size: 9.5px;
+  .topics-filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 7px 15px;
+    font-size: 13px;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .topics-bottom-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .topics-bottom-banner .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -3135,60 +3222,351 @@ a {
     display: none;
   }
 
-  .community-hubs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .community-perks-grid {
-    grid-template-columns: 1fr;
-  }
-
   .community-emblem-border {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
   }
 
   .community-emblem-halo {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
   }
 
   .footer-top {
     flex-direction: column;
     align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer-nav {
+    gap: 12px 20px;
   }
 
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
 }
 
 @media (max-width: 520px) {
   body {
-    font-size: 16px;
+    font-size: 15.5px;
   }
 
-  .hero-stats {
+  .nav {
+    width: calc(100% - 16px);
+    padding: 8px 12px;
+    min-height: 52px;
+    border-radius: 14px;
+    top: 10px;
+  }
+
+  .brand-logo-frame {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .brand-pre {
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-content {
+    padding: 95px 16px 16px;
+  }
+
+  .hero-breadcrumb {
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    gap: 6px;
+    margin-bottom: 16px;
     flex-wrap: wrap;
   }
 
-  .hero-stat {
-    padding: 8px 16px;
-  }
-
-  .hero-stat-value {
-    font-size: 22px;
+  .title-small {
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    margin-bottom: 10px;
   }
 
   .title-big {
-    font-size: clamp(42px, 11vw, 52px);
+    font-size: clamp(38px, 10.5vw, 48px);
     letter-spacing: -0.03em;
   }
 
-  .btn-nav {
+  .tagline {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+
+  .lede {
+    font-size: 13.5px;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .btn-hero,
+  .btn-hero-ghost {
+    width: 100%;
+    justify-content: center;
+    font-size: 14.5px;
+    padding: 12px 18px;
+  }
+
+  .hero-stats-wrap {
+    padding: 0 16px;
+    margin-top: 20px;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-stat {
+    padding: 12px 14px;
+    border-right: none;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-stat:first-child {
+    padding-left: 14px;
+  }
+
+  .hero-stat-value {
+    font-size: 24px;
+  }
+
+  .hero-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-bottom {
+    padding: 14px 16px 20px;
+  }
+
+  .hero-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .section {
+    padding: 75px 16px 20px;
+    scroll-margin-top: 70px;
+  }
+
+  .section-head {
+    margin-bottom: 28px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(26px, 7.5vw, 34px);
+  }
+
+  .section-head p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .about-highlight-item {
+    padding: 10px 8px;
+    text-align: center;
+    align-items: center;
+    border-radius: 12px;
+  }
+
+  .highlight-num {
+    font-size: 17px;
+  }
+
+  .highlight-label {
+    font-size: 10px;
+  }
+
+  .about-image-card {
+    max-width: 270px;
+    border-radius: 20px;
+  }
+
+  .about-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .about-card h3 {
+    font-size: 18px;
+  }
+
+  .about-card p {
+    font-size: 13.5px;
+  }
+
+  .about-quote-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .about-quote-text {
+    font-size: 15px;
+  }
+
+  .about-quote-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-quote-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .topic-card {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .topic-title {
+    font-size: 19px;
+  }
+
+  .topic-blurb {
+    font-size: 13.5px;
+  }
+
+  .how-step-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .how-step-title {
+    font-size: 20px;
+  }
+
+  .how-step-description {
+    font-size: 13.5px;
+    margin-bottom: 18px;
+  }
+
+  .how-simple-bar {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .how-simple-stats {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .community-hero-banner {
+    padding: 24px 16px;
+    border-radius: 18px;
+    gap: 20px;
+  }
+
+  .community-emblem-border {
+    width: 130px;
+    height: 130px;
+  }
+
+  .community-emblem-halo {
+    width: 170px;
+    height: 170px;
+  }
+
+  .community-hero-title {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .community-hero-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .community-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .community-stat-num {
+    font-size: 20px;
+  }
+
+  .community-stat-lbl {
+    font-size: 11px;
+  }
+
+  .community-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .community-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 13.5px;
+    padding: 12px 16px;
+  }
+
+  .footer {
+    padding: 36px 16px 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-highlight-item {
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px 14px;
-    font-size: 13px;
+  }
+
+  .title-big {
+    font-size: clamp(32px, 10vw, 38px);
+  }
+
+  .hero-stat-value {
+    font-size: 20px;
+  }
+
+  .community-emblem-border {
+    width: 115px;
+    height: 115px;
   }
 }
 

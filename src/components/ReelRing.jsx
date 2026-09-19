@@ -127,6 +127,32 @@ export default function ReelRing() {
     setActiveIdx((prev) => (prev - 1 + REELS.length) % REELS.length);
   };
 
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 45;
+
+  const onTouchStart = (e) => {
+    setIsPaused(true);
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    setIsPaused(false);
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      handleNext();
+    } else if (distance < -minSwipeDistance) {
+      handlePrev();
+    }
+  };
+
   return (
     <section className="section reels-ring-section" id="reels">
       {/* Ambient glow */}
@@ -140,15 +166,18 @@ export default function ReelRing() {
         <h2>Real Lessons from Our Instagram</h2>
         <p>
           Visual, story-driven MERN Series episodes explained simply in Tamil &amp; Tanglish.
-          Hover to pause the ring &mdash; click any card to watch the full episode on Instagram.
+          Swipe or hover to pause &mdash; click any card to watch the full episode on Instagram.
         </p>
       </div>
 
-      {/* 3D Rotating Ring Stage */}
+      {/* 3D Rotating Ring Stage with Mobile Touch Swipe */}
       <div
         className="ring-stage reveal"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         {/* Navigation Arrows */}
         <button
