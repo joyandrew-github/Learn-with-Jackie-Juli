@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
-import PageLoader from "./components/PageLoader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -178,9 +177,6 @@ export default function App() {
 
   return (
     <>
-      {/* ---------------- 3D Tower Page Loader ---------------- */}
-      <PageLoader />
-
       <div className="progress" aria-hidden="true" />
 
       {/* ---------------- Nav ---------------- */}
