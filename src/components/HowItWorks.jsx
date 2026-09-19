@@ -18,7 +18,7 @@ const STEPS = [
     label: "STEP 02",
     duration: "5 Minutes",
     icon: "spark",
-    accent: "gold",
+    accent: "crimson",
     title: "Understand the Logic",
     tagline: "We break it down until it clicks naturally",
     description:
@@ -30,7 +30,7 @@ const STEPS = [
     label: "STEP 03",
     duration: "30 Minutes",
     icon: "code",
-    accent: "cobalt",
+    accent: "crimson",
     title: "Build It Yourself",
     tagline: "Try it with a project you can finish today",
     description:
