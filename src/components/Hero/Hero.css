@@ -45,7 +45,8 @@
   pointer-events: none;
 }
 
-.hero-artwork-frame img {
+.hero-artwork-frame img,
+.hero-artwork-frame video {
   width: 100%;
   height: 100%;
   object-fit: contain;

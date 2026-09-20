@@ -37,7 +37,18 @@ export default function Hero() {
     <section className="hero" id="top">
       <div className="hero-bg" aria-hidden="true">
         <div className="hero-artwork-frame">
-          <img src="/hero-bg.jpg" alt="" />
+          <video
+            className="hero-bg-video"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/hero-bg.jpg"
+          >
+            <source src="/hero-bg.webm" type="video/webm" />
+            <source src="/hero-bg.mp4" type="video/mp4" />
+            <img src="/hero-bg.jpg" alt="" />
+          </video>
           <div className="hero-bg-overlay" />
 
           <div className="hero-float-cards">
