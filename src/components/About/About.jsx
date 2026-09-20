@@ -12,19 +12,19 @@ const PILLARS = [
   },
   {
     icon: "play",
-    accent: "var(--gold)",
+    accent: "var(--crimson)",
     title: "Bite-Sized to Deep-Dive",
     desc: "From 60-second Instagram reels that spark curiosity to guided step-by-step topics, learn at your own pace one solid idea at a time.",
   },
   {
     icon: "code",
-    accent: "var(--cobalt)",
+    accent: "var(--crimson)",
     title: "Real-World Engineering",
     desc: "We focus on what actually matters in modern tech: clean code, scalable databases, APIs, full-stack workflows, and emerging AI tools.",
   },
   {
     icon: "community",
-    accent: "var(--ember)",
+    accent: "var(--crimson)",
     title: "Community & Mentorship",
     desc: "You're never learning alone. Join thousands of enthusiastic learners and mentors sharing questions, insights, and career growth.",
   },
