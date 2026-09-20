@@ -94,22 +94,50 @@
   height: 445px;
   margin-left: -125px;
   transform-style: preserve-3d;
-  animation: ring-spin 50s linear infinite;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
-.ring-stage:hover .ring,
-.ring.ring-paused {
-  animation-play-state: paused;
+/* Dots and Navigation Controls */
+.ring-dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 25;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(14, 9, 13, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
 }
 
-@keyframes ring-spin {
-  from {
-    transform: translateZ(calc(var(--r) * -1)) rotateY(0deg);
-  }
-  to {
-    transform: translateZ(calc(var(--r) * -1)) rotateY(-360deg);
-  }
+.ring-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ring-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
+}
+
+.ring-dot-active {
+  width: 22px;
+  border-radius: 10px;
+  background: var(--crimson);
+  box-shadow: 0 0 12px rgba(239, 48, 56, 0.6);
 }
 
 .panel {
@@ -492,20 +520,37 @@
     transform: none;
     width: 44px;
     height: 44px;
-    z-index: 20;
+    z-index: 25;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    pointer-events: auto;
   }
 
   .ring-nav-prev {
-    left: calc(50% - 56px);
+    left: calc(50% - 94px);
   }
 
   .ring-nav-next {
-    right: calc(50% - 56px);
+    right: calc(50% - 94px);
   }
 
-  .ring-nav-btn:hover {
+  .ring-nav-btn:hover,
+  .ring-nav-btn:active {
     transform: scale(1.08);
+  }
+
+  .ring-dots {
+    bottom: 16px;
+    padding: 5px 10px;
+    gap: 6px;
+  }
+
+  .ring-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .ring-dot-active {
+    width: 18px;
   }
 
   .reel-lightbox-modal {

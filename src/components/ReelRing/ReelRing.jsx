@@ -99,9 +99,44 @@ const REELS = [
 ];
 
 export default function ReelRing() {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [lightboxImg, setLightboxImg] = useState(null);
+
+  const activeIdx = ((currentStep % REELS.length) + REELS.length) % REELS.length;
+
+  const handleNext = (e) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    setCurrentStep((prev) => prev + 1);
+  };
+
+  const handlePrev = (e) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    setCurrentStep((prev) => prev - 1);
+  };
+
+  const handleSelectCard = (targetIdx, e) => {
+    if (e) {
+      e.stopPropagation();
+    }
+    let diff = targetIdx - activeIdx;
+    if (diff > REELS.length / 2) diff -= REELS.length;
+    if (diff < -REELS.length / 2) diff += REELS.length;
+    setCurrentStep((prev) => prev + diff);
+  };
+
+  // Auto-advance smoothly every 4.8 seconds when not interacting
+  useEffect(() => {
+    if (isPaused || lightboxImg) return;
+    const timer = setInterval(() => {
+      setCurrentStep((prev) => prev + 1);
+    }, 4800);
+    return () => clearInterval(timer);
+  }, [isPaused, lightboxImg]);
 
   // Close lightbox on Escape key
   useEffect(() => {
@@ -120,18 +155,10 @@ export default function ReelRing() {
     };
   }, [lightboxImg]);
 
-  const handleNext = () => {
-    setActiveIdx((prev) => (prev + 1) % REELS.length);
-  };
-
-  const handlePrev = () => {
-    setActiveIdx((prev) => (prev - 1 + REELS.length) % REELS.length);
-  };
-
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
-  const minSwipeDistance = 45;
+  const minSwipeDistance = 35;
 
   const onTouchStart = (e) => {
     setIsPaused(true);
@@ -152,6 +179,8 @@ export default function ReelRing() {
     } else if (distance < -minSwipeDistance) {
       handlePrev();
     }
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   return (
@@ -185,15 +214,34 @@ export default function ReelRing() {
           type="button"
           className="ring-nav-btn ring-nav-prev"
           onClick={handlePrev}
+          onTouchStart={(e) => e.stopPropagation()}
+          onTouchEnd={(e) => e.stopPropagation()}
           aria-label="Previous Reel"
         >
           <Icon name="chevron-left" size={20} />
         </button>
 
+        {/* Real Indicator Dots */}
+        <div className="ring-dots">
+          {REELS.map((r, i) => (
+            <button
+              key={r.id}
+              type="button"
+              className={`ring-dot ${i === activeIdx ? "ring-dot-active" : ""}`}
+              onClick={(e) => handleSelectCard(i, e)}
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
+              aria-label={`Go to ${r.ep}: ${r.title}`}
+            />
+          ))}
+        </div>
+
         <button
           type="button"
           className="ring-nav-btn ring-nav-next"
           onClick={handleNext}
+          onTouchStart={(e) => e.stopPropagation()}
+          onTouchEnd={(e) => e.stopPropagation()}
           aria-label="Next Reel"
         >
           <Icon name="chevron-right" size={20} />
@@ -201,9 +249,9 @@ export default function ReelRing() {
 
         {/* The 3D Ring Cylinder */}
         <div
-          className={`ring ${isPaused ? "ring-paused" : ""}`}
+          className="ring"
           style={{
-            "--rotation-offset": `${-activeIdx * 72}deg`,
+            transform: `translateZ(calc(var(--r) * -1)) rotateY(${currentStep * -72}deg)`,
           }}
         >
           {REELS.map((r, i) => {
@@ -216,7 +264,7 @@ export default function ReelRing() {
                   "--i": i,
                   "--c1": r.accent,
                 }}
-                onClick={() => setActiveIdx(i)}
+                onClick={() => handleSelectCard(i)}
               >
                 {/* Real High-Resolution Reel Cover Image */}
                 <img
