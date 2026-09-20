@@ -18,6 +18,15 @@ const STATS = [
   { value: "BIG", label: "COMMUNITY" },
 ];
 
+const MOBILE_BADGES = [
+  { id: "code", label: "Code", icon: "code", href: "#topics", side: "left", top: "10%", delay: 0 },
+  { id: "learn", label: "Learn", icon: "spark", href: "#about", side: "right", top: "8%", delay: 0.3 },
+  { id: "grow", label: "Grow", icon: "db", href: "#topics", side: "left", top: "46%", delay: 0.6 },
+  { id: "build", label: "Build", icon: "layers", href: "#how-it-works", side: "right", top: "45%", delay: 0.9 },
+  { id: "reels", label: "Reels", icon: "play", href: "#reels", side: "left", top: "82%", delay: 1.2 },
+  { id: "community", label: "Community", icon: "community", href: "#community", side: "right", top: "82%", delay: 1.5 },
+];
+
 function FloatingCard({ icon, label, style, delay = 0 }) {
   return (
     <div
@@ -81,10 +90,10 @@ export default function Hero() {
           </h1>
           <p className="tagline">Understand IT. Build the Future.</p>
 
-          <div className="hero-mobile-visual" aria-hidden="true">
+          <div className="hero-mobile-visual">
             <div className="hero-mobile-circle-wrap">
-              <div className="hero-mobile-circle-glow" />
-              <div className="hero-mobile-circle">
+              <div className="hero-mobile-circle-glow" aria-hidden="true" />
+              <div className="hero-mobile-circle" aria-hidden="true">
                 <video
                   autoPlay
                   loop
@@ -97,14 +106,20 @@ export default function Hero() {
                   <img src="/hero-circle-mobile.jpg" alt="Jackie and Juli Team" />
                 </video>
               </div>
-              <div className="hero-mobile-badge hero-mobile-badge-left">
-                <span className="badge-icon"><Icon name="code" size={13} /></span>
-                <span>Code</span>
-              </div>
-              <div className="hero-mobile-badge hero-mobile-badge-right">
-                <span className="badge-icon"><Icon name="spark" size={13} /></span>
-                <span>Build</span>
-              </div>
+              {MOBILE_BADGES.map((b) => (
+                <a
+                  key={b.id}
+                  href={b.href}
+                  className={`hero-mobile-badge hero-mobile-badge-${b.side} hero-mobile-badge-${b.id}`}
+                  style={{ top: b.top, animationDelay: `${b.delay}s` }}
+                  aria-label={`Explore ${b.label}`}
+                >
+                  <span className="badge-icon">
+                    <Icon name={b.icon} size={13} />
+                  </span>
+                  <span>{b.label}</span>
+                </a>
+              ))}
             </div>
           </div>
 
