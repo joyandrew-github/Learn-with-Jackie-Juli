@@ -1,0 +1,303 @@
+/* ------------------------------------------------------------------ */
+/*  Community Guild Section                                            */
+/* ------------------------------------------------------------------ */
+.community-section {
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 90px;
+}
+
+.community-ambient-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(239, 48, 56, 0.14) 0%, rgba(37, 71, 200, 0.08) 50%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.community-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff8a8a;
+  background: rgba(239, 48, 56, 0.1);
+  border: 1px solid rgba(239, 48, 56, 0.3);
+  margin-bottom: 14px;
+}
+
+.community-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--crimson);
+  box-shadow: 0 0 8px var(--crimson);
+}
+
+/* Grand Brand Showcase Banner */
+.community-hero-banner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 48px;
+  border-radius: 28px;
+  background:
+    radial-gradient(80% 120% at 0% 50%, rgba(239, 48, 56, 0.2), transparent 70%),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02) 60%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.community-hero-emblem-wrap {
+  position: relative;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.community-emblem-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 48, 56, 0.35) 0%, rgba(255, 194, 26, 0.2) 60%, transparent 75%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.community-emblem-border {
+  position: relative;
+  z-index: 2;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, var(--crimson), #ff8a6a, var(--gold));
+  box-shadow: 0 0 35px rgba(239, 48, 56, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: emblemFloat 6s ease-in-out infinite;
+}
+
+@keyframes emblemFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.community-emblem-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.community-emblem-badge {
+  margin-top: 14px;
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  background: rgba(18, 12, 17, 0.85);
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 194, 26, 0.3);
+}
+
+.badge-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+.community-hero-content {
+  flex: 1;
+}
+
+.community-hero-tag {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.community-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.community-hero-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #d1d1d6;
+  line-height: 1.65;
+  max-width: 60ch;
+  margin-bottom: 24px;
+}
+
+.community-hero-stats {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.community-stat-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.community-stat-num {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.community-stat-lbl {
+  font-size: 12px;
+  color: var(--mute);
+  margin-top: 3px;
+}
+
+.community-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Community Responsive                                               */
+/* ------------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .community-hero-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 24px;
+    gap: 28px;
+  }
+
+  .community-hero-desc {
+    max-width: 100%;
+  }
+
+  .community-hero-stats {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .community-hero-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .community-emblem-border {
+    width: 150px;
+    height: 150px;
+  }
+
+  .community-emblem-halo {
+    width: 190px;
+    height: 190px;
+  }
+}
+
+@media (max-width: 520px) {
+  .community-hero-banner {
+    padding: 24px 16px;
+    border-radius: 18px;
+    gap: 20px;
+  }
+
+  .community-emblem-border {
+    width: 130px;
+    height: 130px;
+  }
+
+  .community-emblem-halo {
+    width: 170px;
+    height: 170px;
+  }
+
+  .community-hero-title {
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .community-hero-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+
+  .community-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .community-stat-num {
+    font-size: 20px;
+  }
+
+  .community-stat-lbl {
+    font-size: 11px;
+  }
+
+  .community-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .community-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 13.5px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .community-emblem-border {
+    width: 115px;
+    height: 115px;
+  }
+}

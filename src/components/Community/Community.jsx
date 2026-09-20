@@ -1,5 +1,6 @@
-import Icon from "./Icon";
-import brandLogo from "../assets/image.png";
+import Icon from "../common/Icon";
+import brandLogo from "../../assets/image.png";
+import "./Community.css";
 
 const IG_URL = "https://www.instagram.com/learn_with_jackie_juli/";
 const IG_HANDLE = "@learn_with_jackie_juli";

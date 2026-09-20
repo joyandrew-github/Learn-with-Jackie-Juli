@@ -1,0 +1,336 @@
+/* ------------------------------------------------------------------ */
+/*  How It Works / 3-Step Learning                                     */
+/* ------------------------------------------------------------------ */
+.how-section {
+  position: relative;
+  padding-top: 100px;
+}
+
+.how-ambient-glow {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(239, 48, 56, 0.1) 0%, rgba(255, 194, 26, 0.05) 50%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.how-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(255, 194, 26, 0.08);
+  border: 1px solid rgba(255, 194, 26, 0.25);
+  margin-bottom: 14px;
+}
+
+.how-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+}
+
+/* Spacious, Uncongested 3-Card Grid */
+.how-spacious-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+  margin-top: 48px;
+}
+
+.how-step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 38px 30px;
+  border-radius: 26px;
+  background: rgba(18, 12, 17, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.how-step-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.how-step-crimson:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(239, 48, 56, 0.28);
+}
+
+.how-step-gold:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(255, 194, 26, 0.28);
+}
+
+.how-step-cobalt:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(37, 71, 200, 0.32);
+}
+
+/* Top Meta Row */
+.how-card-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.how-step-badge {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 5px 11px;
+  border-radius: 8px;
+}
+
+.badge-crimson {
+  color: #ff8a8a;
+  background: rgba(239, 48, 56, 0.14);
+  border: 1px solid rgba(239, 48, 56, 0.3);
+}
+
+.badge-gold {
+  color: #ffe07a;
+  background: rgba(255, 194, 26, 0.14);
+  border: 1px solid rgba(255, 194, 26, 0.3);
+}
+
+.badge-cobalt {
+  color: #92abff;
+  background: rgba(37, 71, 200, 0.18);
+  border: 1px solid rgba(37, 71, 200, 0.35);
+}
+
+.how-time-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mute);
+}
+
+/* Big Glowing Step Icon */
+.how-icon-circle {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  margin-bottom: 22px;
+  transition: transform 0.4s var(--ease);
+}
+
+.how-step-card:hover .how-icon-circle {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.circle-crimson {
+  color: #fff;
+  background: radial-gradient(circle at 30% 25%, #ff7b7b, var(--crimson) 60%, var(--crimson-deep));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 24px rgba(239, 48, 56, 0.4);
+}
+
+.circle-gold {
+  color: #261a00;
+  background: radial-gradient(circle at 30% 25%, #fff1a8, var(--gold) 60%, #b88600);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 10px 24px rgba(255, 194, 26, 0.35);
+}
+
+.circle-cobalt {
+  color: #fff;
+  background: radial-gradient(circle at 30% 25%, #6a95ff, var(--cobalt) 60%, #0d1e66);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 24px rgba(37, 71, 200, 0.4);
+}
+
+/* Headings */
+.how-step-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.how-step-tagline {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.how-step-description {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #b8b8c2;
+  margin-bottom: 28px;
+}
+
+/* Feature Pill at Card Bottom */
+.how-step-footer {
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.how-feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #e4e4e7;
+}
+
+.how-feature-chip svg {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+/* Clean Reassurance Bar */
+.how-simple-bar {
+  margin-top: 48px;
+  padding: 30px 40px;
+  border-radius: 22px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.how-simple-lead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.how-simple-lead svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.how-simple-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.how-simple-sub {
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 2px;
+}
+
+.how-simple-stats {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.how-simple-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.stat-big {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-lbl {
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--bone);
+}
+
+.stat-dsc {
+  font-size: 11px;
+  color: var(--mute);
+}
+
+/* ------------------------------------------------------------------ */
+/*  How It Works Responsive                                            */
+/* ------------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .how-spacious-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .how-simple-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .how-simple-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .how-step-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .how-step-title {
+    font-size: 20px;
+  }
+
+  .how-step-description {
+    font-size: 13.5px;
+    margin-bottom: 18px;
+  }
+
+  .how-simple-bar {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .how-simple-stats {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import brandLogo from "../assets/image.png";
+import brandLogo from "../../assets/image.png";
 import "./PageLoader.css";
 
 const STATUS_MESSAGES = [

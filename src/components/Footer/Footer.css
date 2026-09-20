@@ -1,0 +1,124 @@
+/* ------------------------------------------------------------------ */
+/*  Enhanced Footer                                                    */
+/* ------------------------------------------------------------------ */
+.footer {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 50px 24px 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-logo-frame {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--crimson), var(--gold));
+  box-shadow: 0 0 14px rgba(239, 48, 56, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.footer-brand-sub {
+  font-size: 12px;
+  color: var(--mute);
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  color: var(--mute);
+  transition: color 0.25s var(--ease);
+}
+
+.footer-nav a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  color: var(--mute);
+}
+
+.footer-ig-link {
+  color: var(--gold);
+  transition: opacity 0.25s var(--ease);
+}
+
+.footer-ig-link:hover {
+  opacity: 0.8;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Footer Responsive                                                  */
+/* ------------------------------------------------------------------ */
+@media (max-width: 640px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer-nav {
+    gap: 12px 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer {
+    padding: 36px 16px 40px;
+  }
+}

@@ -1,4 +1,5 @@
-import Icon from "./Icon";
+import Icon from "../common/Icon";
+import "./Hero.css";
 
 const IG_URL = "https://www.instagram.com/learn_with_jackie_juli/";
 

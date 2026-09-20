@@ -1,6 +1,7 @@
-import Icon from "./Icon";
-import brandLogo from "../assets/image.png";
-import jackieJuliImg from "../assets/Jackie-Juli.png";
+import Icon from "../common/Icon";
+import brandLogo from "../../assets/image.png";
+import jackieJuliImg from "../../assets/Jackie-Juli.png";
+import "./About.css";
 
 const PILLARS = [
   {

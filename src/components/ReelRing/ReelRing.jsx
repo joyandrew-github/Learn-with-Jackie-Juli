@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import Icon from "./Icon";
+import Icon from "../common/Icon";
+import "./ReelRing.css";
 
-import imgAuth from "../assets/Authentication vs Authorization Essentials.png";
-import imgPassword from "../assets/Password Hashing_ Store Safe, Stay Secure.png";
-import imgGit from "../assets/MERN Series EP 13_ Git & GitHub(1).png";
-import imgCDN from "../assets/CDN Explained_ Global Speed and Reach.png";
-import imgCaching from "../assets/MERN Series_ Caching Explained.png";
+import imgAuth from "../../assets/Authentication vs Authorization Essentials.png";
+import imgPassword from "../../assets/Password Hashing_ Store Safe, Stay Secure.png";
+import imgGit from "../../assets/MERN Series EP 13_ Git & GitHub(1).png";
+import imgCDN from "../../assets/CDN Explained_ Global Speed and Reach.png";
+import imgCaching from "../../assets/MERN Series_ Caching Explained.png";
 
 const IG_URL = "https://www.instagram.com/learn_with_jackie_juli/";
 

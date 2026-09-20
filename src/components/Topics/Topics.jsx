@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Icon from "./Icon";
+import Icon from "../common/Icon";
+import "./Topics.css";
 
 const CATEGORIES = [
   { id: "all", label: "All Tracks" },
@@ -38,7 +39,7 @@ const TRACKS = [
       "Fast SPA development with modern build tools",
     ],
     tags: ["React 19", "Hooks", "Vite"],
-    accent: "#2547C8",
+    accent: "#EF3038",
     icon: "layers",
   },
   {
@@ -54,7 +55,7 @@ const TRACKS = [
       "Error handling & asynchronous request pipelines",
     ],
     tags: ["Node.js", "Express", "REST APIs"],
-    accent: "#FF6B35",
+    accent: "#EF3038",
     icon: "db",
   },
   {
@@ -70,7 +71,7 @@ const TRACKS = [
       "Connecting databases to real application backends",
     ],
     tags: ["PostgreSQL", "SQL", "MongoDB"],
-    accent: "#FFC21A",
+    accent: "#EF3038",
     icon: "db",
   },
   {
@@ -102,7 +103,7 @@ const TRACKS = [
       "Zero-config cloud deployments with Vercel/GitHub",
     ],
     tags: ["Git", "GitHub", "Terminal"],
-    accent: "#2547C8",
+    accent: "#EF3038",
     icon: "code",
   },
 ];

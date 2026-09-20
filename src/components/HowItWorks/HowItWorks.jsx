@@ -1,4 +1,5 @@
-import Icon from "./Icon";
+import Icon from "../common/Icon";
+import "./HowItWorks.css";
 
 const STEPS = [
   {
@@ -59,7 +60,7 @@ export default function HowItWorks() {
 
       {/* Spacious, Uncongested 3-Step Cards */}
       <div className="how-spacious-grid reveal">
-        {STEPS.map((s, idx) => (
+        {STEPS.map((s) => (
           <div
             key={s.step}
             className={`how-step-card glass how-step-${s.accent}`}
