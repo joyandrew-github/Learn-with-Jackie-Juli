@@ -24,8 +24,6 @@ export default function App() {
       {/* ---------------- Cyber Tech Initial Page Loader ---------------- */}
       <PageLoader />
 
-      <div className="progress" aria-hidden="true" />
-
       {/* ---------------- Nav ---------------- */}
       <Navbar scrolled={scrolled} active={active} />
 

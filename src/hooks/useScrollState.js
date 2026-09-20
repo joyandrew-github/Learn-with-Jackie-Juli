@@ -5,7 +5,7 @@ const reduceMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /**
- * Writes scroll position to --sy and scroll progress (0..1) to --p,
+ * Writes scroll position to --sy,
  * and reports whether the page has scrolled past the top.
  */
 export default function useScrollState() {
@@ -18,9 +18,7 @@ export default function useScrollState() {
 
     const write = () => {
       const y = window.scrollY;
-      const max = root.scrollHeight - window.innerHeight;
       if (animate) root.style.setProperty("--sy", String(Math.min(y, 1200)));
-      root.style.setProperty("--p", max > 0 ? (y / max).toFixed(4) : "0");
       setScrolled(y > 35);
       raf = 0;
     };
