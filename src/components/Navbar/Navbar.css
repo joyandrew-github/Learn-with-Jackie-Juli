@@ -291,7 +291,7 @@
   z-index: 100;
   display: flex;
   flex-direction: column;
-  padding: 24px 20px;
+  padding: 24px 20px max(24px, env(safe-area-inset-bottom));
   transform: translateX(100%);
   transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -359,12 +359,12 @@
 
 .nav-mobile-active {
   color: #fff !important;
-  background: linear-gradient(135deg, rgba(239, 48, 56, 0.2), rgba(255, 194, 26, 0.1)) !important;
-  border-color: rgba(239, 48, 56, 0.35) !important;
+  background: linear-gradient(135deg, rgba(239, 48, 56, 0.22), rgba(239, 48, 56, 0.08)) !important;
+  border-color: rgba(239, 48, 56, 0.4) !important;
 }
 
 .nav-mobile-indicator {
-  color: var(--gold);
+  color: var(--crimson);
   font-size: 10px;
 }
 

@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="hero-bg" aria-hidden="true">
         <div className="hero-artwork-frame">
           <video
-            className="hero-bg-video"
+            className="hero-bg-video hero-video-desktop"
             autoPlay
             loop
             muted
@@ -48,6 +48,19 @@ export default function Hero() {
             <source src="/hero-bg.webm" type="video/webm" />
             <source src="/hero-bg.mp4" type="video/mp4" />
             <img src="/hero-bg.jpg" alt="" />
+          </video>
+
+          <video
+            className="hero-bg-video hero-video-mobile"
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/hero-bg-mobile.jpg"
+          >
+            <source src="/hero-bg-mobile.webm" type="video/webm" />
+            <source src="/hero-bg-mobile.mp4" type="video/mp4" />
+            <img src="/hero-bg-mobile.jpg" alt="" />
           </video>
           <div className="hero-bg-overlay" />
 

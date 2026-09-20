@@ -297,7 +297,17 @@
 
 @media (max-width: 360px) {
   .community-emblem-border {
-    width: 115px;
-    height: 115px;
+    width: 110px;
+    height: 110px;
+  }
+
+  .community-emblem-halo {
+    width: 145px;
+    height: 145px;
+  }
+
+  .community-hero-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }

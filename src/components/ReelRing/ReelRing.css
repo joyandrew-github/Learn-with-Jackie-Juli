@@ -568,6 +568,19 @@
   }
 }
 
+@media (max-width: 360px) {
+  .ring-stage {
+    --r: 152px;
+    height: 380px;
+  }
+
+  .ring {
+    width: 132px;
+    height: 238px;
+    margin-left: -66px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ring {
     animation: none;
