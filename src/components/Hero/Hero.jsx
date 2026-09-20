@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="hero-bg" aria-hidden="true">
         <div className="hero-artwork-frame">
           <video
-            className="hero-bg-video hero-video-desktop"
+            className="hero-bg-video"
             autoPlay
             loop
             muted
@@ -48,19 +48,6 @@ export default function Hero() {
             <source src="/hero-bg.webm" type="video/webm" />
             <source src="/hero-bg.mp4" type="video/mp4" />
             <img src="/hero-bg.jpg" alt="" />
-          </video>
-
-          <video
-            className="hero-bg-video hero-video-mobile"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/hero-bg-mobile.jpg"
-          >
-            <source src="/hero-bg-mobile.webm" type="video/webm" />
-            <source src="/hero-bg-mobile.mp4" type="video/mp4" />
-            <img src="/hero-bg-mobile.jpg" alt="" />
           </video>
           <div className="hero-bg-overlay" />
 
@@ -93,6 +80,34 @@ export default function Hero() {
             </span>
           </h1>
           <p className="tagline">Understand IT. Build the Future.</p>
+
+          <div className="hero-mobile-visual" aria-hidden="true">
+            <div className="hero-mobile-circle-wrap">
+              <div className="hero-mobile-circle-glow" />
+              <div className="hero-mobile-circle">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster="/hero-circle-mobile.jpg"
+                >
+                  <source src="/hero-circle-mobile.webm" type="video/webm" />
+                  <source src="/hero-circle-mobile.mp4" type="video/mp4" />
+                  <img src="/hero-circle-mobile.jpg" alt="Jackie and Juli Team" />
+                </video>
+              </div>
+              <div className="hero-mobile-badge hero-mobile-badge-left">
+                <span className="badge-icon"><Icon name="code" size={13} /></span>
+                <span>Code</span>
+              </div>
+              <div className="hero-mobile-badge hero-mobile-badge-right">
+                <span className="badge-icon"><Icon name="spark" size={13} /></span>
+                <span>Build</span>
+              </div>
+            </div>
+          </div>
+
           <p className="lede">
             Simple explanations. Real-world tech. In Tamil &amp; Tanglish.
             <br />
