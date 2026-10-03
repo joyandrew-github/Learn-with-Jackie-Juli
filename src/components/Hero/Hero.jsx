@@ -12,7 +12,7 @@ const FLOATING_CARDS = [
 ];
 
 const STATS = [
-  { value: "6.0K+", label: "FOLLOWERS" },
+  { value: "11.0K+", label: "FOLLOWERS" },
   { value: "15+", label: "REELS" },
   { value: "10+", label: "TOPICS" },
   { value: "BIG", label: "COMMUNITY" },
